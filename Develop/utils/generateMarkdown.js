@@ -2,7 +2,19 @@
 function generateMarkdown(data) {
   return `# ${data.title}
 
+
+  ## Description 
+  ${data.description}
+
+  ## Table of Contents 
+
 `;
 }
 
-module.exports = generateMarkdown;
+function private_function() {
+  console.log("This only works here")
+}
+
+module.exports = {
+  generateMarkdown
+}
