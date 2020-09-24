@@ -1,20 +1,40 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(data, githubInfo) {
   return `# ${data.title}
 
 
-  ## Description 
-  ${data.description}
+  
+${data.badge}
+## Description 
+${data.description}
+## Table of contents 
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Licence](#Licence)
+- [Contributors](#Contributors)
+- [Test](#Test)
+- [Repository Link](#Repository)
+- [GitHub Info](#GitHub) 
 
-  ## Table of Contents 
 
+## Installation
+        ${data.installation}
+## Usage
+${data.usage}
+## Licence
+${data.licence}
+## Contributors
+${data.contributing}
+## Test
+${data.test}
+## Repository
+- [Project Repo](${data.repo})
+## GitHub
+- ${githubInfo.name}
+- [GitHub Profile](${githubInfo.profile})
+- <${githubInfo.email}>
 `;
 }
 
-function private_function() {
-  console.log("This only works here")
-}
-
-module.exports = {
-  generateMarkdown
-}
+module.exports = generateMarkdown;
