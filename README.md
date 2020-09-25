@@ -18,7 +18,21 @@ When creating an open source project on GitHub, it is important to have a qualit
 
 ## Installation
 Step1: Run npm install
-S
+Step2: Rund node index.js
 
 
-## 
+## Usage 
+Rund node index.js 
+Answer the questions
+
+## Questions 
+if you have any questions please contact ydeek91 on Github. 
+
+## License 
+MIT 
+BSD
+
+## Badges 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
