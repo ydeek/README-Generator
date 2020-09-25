@@ -1,10 +1,18 @@
 // function to generate markdown for README
-function generateMarkdown(data, githubInfo) {
-  return `# ${data.title}
+function generateMarkdown(data) {
+  var licenceLink = ""
+  if (data.licence === "MIT") {
+    licenceLink = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  }
+  else {
+    licenceLink = "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+  }
 
+  return `
 
-  
-${data.badge}
+## Title 
+  ${data.title}
+
 ## Description 
 ${data.description}
 ## Table of contents 
@@ -24,16 +32,19 @@ ${data.description}
 ${data.usage}
 ## Licence
 ${data.licence}
+${licenceLink}
+## Badge 
+${data.badge}
 ## Contributors
 ${data.contributing}
 ## Test
 ${data.test}
 ## Repository
 - [Project Repo](${data.repo})
-## GitHub
-- ${githubInfo.name}
-- [GitHub Profile](${githubInfo.profile})
-- <${githubInfo.email}>
+## Github username 
+-${data.username}
+## Github Profile 
+- [Github profile](https://github.com/${data.username})
 `;
 }
 

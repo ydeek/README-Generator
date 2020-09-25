@@ -1,7 +1,6 @@
 var fs = require("fs");
 var inq = require("inquirer");
-const axios = require("axios");
-var utils = require("./utils/generateMarkdown");
+var generateMarkdown = require("./utils/generateMarkdown");
 // array of questions for user
 const questions = [
 
@@ -17,12 +16,12 @@ function init() {
     inq.prompt([{
         type: "input",
         name: "title",
-        message: "Please provide your project title"
+        message: "Please provide your project title",
         default: "Generate a README.md file"
     }, {
         type: "input",
         name: "description",
-        message: "Please descripe your project"
+        message: "Please describe your project"
     }, {
         type: "input",
         name: "installation",
@@ -33,9 +32,10 @@ function init() {
         message: "What is the usage of the project?"
 
     }, {
-        type: "input",
+        type: "list",
         name: "licence",
-        message: "Please provide the project licence or your badge project"
+        message: "please pick a licence ",
+        choices: ["MIT", "BSD"]
     }, {
         type: "input",
         name: "contributing",
@@ -60,12 +60,11 @@ function init() {
 
     }]).then(res => {
         console.log(res)
-        const file_content = utils.generateMarkdown(res)
-        fs.writeFile("READ_AGAIN.md", file_content, () => {
-            // console.log("I wrote a file")
-        })
+        const file_content = generateMarkdown(res)
+        fs.writeFileSync("READ_AGAIN.md", file_content)
     })
 }
 
 // function call to initialize program
 init();
+
