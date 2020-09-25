@@ -16,34 +16,34 @@ function init() {
     inq.prompt([{
         type: "input",
         name: "title",
-        message: "Please provide your project title",
-        default: "Generate a README.md file"
+        message: "Please provide your project title:",
     }, {
         type: "input",
         name: "description",
-        message: "Please describe your project"
+        message: "Please describe your project:"
     }, {
         type: "input",
         name: "installation",
-        message: "Provide your installation instructions here"
+        message: "Provide your installation instructions here:"
     }, {
         type: "input",
         name: "usage",
-        message: "What is the usage of the project?"
+        message: "Please provide project usage:"
 
     }, {
         type: "list",
         name: "licence",
-        message: "please pick a licence ",
+        message: "please pick a licence: ",
         choices: ["MIT", "BSD"]
     }, {
         type: "input",
         name: "contributing",
-        message: "Please provide the contributing parties if any"
+        message: "Please provide the contributing parties",
+        default: "If there is any"
     }, {
         type: "input",
         name: "test",
-        message: "Please provide the project tests"
+        message: "Please provide the project tests:"
     }, {
         type: "input",
         name: "badge",
