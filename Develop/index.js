@@ -12,7 +12,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    // console.log("Hello from init")
+    //console.log("Hello Welcome to README Generator")
     inq.prompt([{
         type: "input",
         name: "title",
